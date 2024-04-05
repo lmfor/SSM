@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 520175639}
   - component: {fileID: 520175638}
   m_Layer: 0
-  m_Name: BIG FKING ENEMY
+  m_Name: triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
