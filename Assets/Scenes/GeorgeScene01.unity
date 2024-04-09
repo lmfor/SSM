@@ -499,7 +499,28 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 343684522}
+=======
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 520175639}
+  - component: {fileID: 520175638}
+  m_Layer: 0
+  m_Name: triangle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &520175638
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520175637}
+>>>>>>> 4afb7565ae2f4c1af3cb1a9021eaa2e987025422
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
