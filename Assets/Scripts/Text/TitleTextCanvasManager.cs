@@ -7,6 +7,6 @@ public class TitleTextCanvasManager : MonoBehaviour
 {
     public void StartGame()
     {
-        Debug.Log("TEST DEBUG");
+        SceneManager.LoadScene(1);
     }
 }
