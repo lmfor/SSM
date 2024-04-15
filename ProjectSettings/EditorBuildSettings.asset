@@ -9,7 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene01.unity
     guid: 8604993427b70cc4d8a6d042e34bfdbf
   - enabled: 1
-    path: Assets/Scenes/WorldScene01.unity
+    path: Assets/Scenes/LobbyScene01.unity
     guid: 67273cfa015292445a5639e2724ea91f
+  - enabled: 1
+    path: Assets/Scenes/LevelScene01.unity
+    guid: 2608a271c5e102148a8a1346050f7d7b
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
