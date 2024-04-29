@@ -15,6 +15,7 @@ public class ShopButtonCanvasManager : MonoBehaviour
     [Header("Main Buttons")]
     public Button buyButton;
     public Button backButton;
+    public Button deselectButton;
 
     [Header("Power Buttons")]
     public Button pulseButton;
@@ -34,6 +35,7 @@ public class ShopButtonCanvasManager : MonoBehaviour
 
     [Header("Price Text")]
     public TextMeshProUGUI priceText;
+    public TextMeshProUGUI balanceText;
 
     [Header("Audio")]
     public AudioSource audioSource;
@@ -54,11 +56,18 @@ public class ShopButtonCanvasManager : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void SwitchSceneBackToTitle()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+
     private void Start()
     {
         //PULL balance amount from SOMEWHERE
-
+        //titleScreenButton.onClick.AddListener(() => OnButtonClick(titleScreenButton));
         buyButton.onClick.AddListener(() => OnButtonClick(buyButton));
+        deselectButton.onClick.AddListener(() => OnButtonClick(deselectButton));
 
         //SKILL TREE BUTTONS / POWER BUTTONS
         pulseButton.onClick.AddListener(() => OnButtonClick(pulseButton));
@@ -73,9 +82,15 @@ public class ShopButtonCanvasManager : MonoBehaviour
         CooldownButton.onClick.AddListener(() => OnButtonClick(CooldownButton));
         DamageButton.onClick.AddListener(() => OnButtonClick(DamageButton));
 
+
         miscellaneousButtons = new List<Button> { buyButton, backButton };
         selectedButtons = new List<Button>();
 
+    }
+
+    private void Update()
+    {
+        balanceText.text = ( "Balance : " + Convert.ToString(balance) );
     }
 
 
@@ -109,6 +124,7 @@ public class ShopButtonCanvasManager : MonoBehaviour
         }
     }
 
+    
     public void OnButtonClick(Button clickedButton)
     {
         if(clickedButton != null)
@@ -118,6 +134,20 @@ public class ShopButtonCanvasManager : MonoBehaviour
             {
                 audioSource.PlayOneShot(clickSound);
             } 
+
+            //DESELECT BUTTON
+            if(clickedButton == deselectButton)
+            {
+                foreach (Button b in selectedButtons)
+                {
+                    b.enabled = true;
+                    b.gameObject.SetActive(true);
+                }
+                priceText.text = "0";
+                selectedButtons.Clear();
+            }
+
+            
 
 
 

@@ -7,6 +7,11 @@ public class TitleTextCanvasManager : MonoBehaviour
 {
     public void StartGame()
     {
+        SceneManager.LoadScene(2);
+    }
+
+    public void OpenShop()
+    {
         SceneManager.LoadScene(1);
     }
 }

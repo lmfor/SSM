@@ -12,7 +12,8 @@ public class TitleScreenFadeInAndOut : MonoBehaviour, IPointerEnterHandler, IPoi
     public TextMeshProUGUI textMesh;
     private bool fadingIn = true;
     private bool isBeingHovered = false;
-    public AudioSource clicktostartAudio;
+    public AudioSource audioSource;
+    public AudioClip hoverAudio;
 
     [Header("COLOR OPTIONS")]
     public Color hoverColor;
@@ -23,6 +24,9 @@ public class TitleScreenFadeInAndOut : MonoBehaviour, IPointerEnterHandler, IPoi
     {
         originalColor = textMesh.color;
         textMesh = GetComponent<TextMeshProUGUI>();
+        //hoverAudio = GetComponent<AudioClip>();
+        //audioSource = GetComponent<AudioSource>(); ;
+
         if (textMesh == null)
         {
             return;
@@ -82,9 +86,16 @@ public class TitleScreenFadeInAndOut : MonoBehaviour, IPointerEnterHandler, IPoi
         //textMesh.color = hoverColor;
         isBeingHovered = true;
         textMesh.color = Color.black;
-        clicktostartAudio.Play();
+        //clicktostartAudio.Play();
+        //audioSource.PlayOneShot(clicktostartAudio);
         
+        if(!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(hoverAudio);
+        }
         
+
+
 
     }
 
